@@ -30,6 +30,8 @@ github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDk
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
 github.com/codenotary/immudb v0.0.0-20201009135111-4ecdf1bf01bd h1:72F5JLfVxa2W5cetg22EaRCurwpwCdPNkYOuEfDMRyA=
 github.com/codenotary/immudb v0.0.0-20201009135111-4ecdf1bf01bd/go.mod h1:eplq5VZWdNCP4pRZTGVE9ellhnfd37SXAEeUfeEtw+U=
+github.com/codenotary/immudb v0.0.0-20201014151548-74e7b6c86339 h1:1Z48WnNBx2JOgu+Mm9iaCkL6GpeTK1c9+JsQQjnj2H4=
+github.com/codenotary/immudb v0.0.0-20201014151548-74e7b6c86339/go.mod h1:otCztOd0EipuKMyYkzcWnWGRQZT5Amr4+BkDFD4i1Lg=
 github.com/codenotary/merkletree v0.1.2-0.20200720105344-68d95395a656 h1:Rp8hZs7t0fNLlfLj9PzEmW/W7X+nSp0vpu5CB0ba0jM=
 github.com/codenotary/merkletree v0.1.2-0.20200720105344-68d95395a656/go.mod h1:RkIGSuQ3nHZbE0rH21aYxyqlrI/2eICNOOIanDbzZPg=
 github.com/coreos/bbolt v1.3.2/go.mod h1:iRUV2dpdMOn7Bo10OQBFzIJO9kkE559Wcmn+qkEiiKk=
@@ -224,6 +226,8 @@ github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGr
 github.com/ugorji/go/codec v0.0.0-20181204163529-d75b2dcb6bc8/go.mod h1:VFNgLljTbGfSG7qAOspJ7OScBnGdDN/yBr0sguwnwf0=
 github.com/vchain-us/ledger-compliance-go v0.0.0-20201012160855-de9cc58c77da h1:Iq0AslW+hvuoWciZVkLGPr8TRnbIztP+f1zoG9cXzys=
 github.com/vchain-us/ledger-compliance-go v0.0.0-20201012160855-de9cc58c77da/go.mod h1:RVZy2Ms2wh+cxc3nsyT0o1tKoVcx1SsgT3DV5xMwbNU=
+github.com/vchain-us/ledger-compliance-go v0.0.0-20201014151406-5654aa5886dc h1:lQboXmnlOheeZMsLYhyr+WQDiXKBxN8fFDiElfnedL4=
+github.com/vchain-us/ledger-compliance-go v0.0.0-20201014151406-5654aa5886dc/go.mod h1:RVZy2Ms2wh+cxc3nsyT0o1tKoVcx1SsgT3DV5xMwbNU=
 github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2/go.mod h1:UETIi67q53MR2AWcXfiuqkDkRtnGDLqkBTpCHuJHxtU=
 github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77/go.mod h1:aYKd//L2LvnjZzWKhF00oedf4jCCReLcmhLdhm1A27Q=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
