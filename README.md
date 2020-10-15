@@ -16,3 +16,9 @@ Enable debug:
 ```bash
 export LCVSIMMU_DEBUG=debug
 ```
+
+Disable use database :
+```bash
+./benchmark 1000 athlndeyjnyfqcnvoexjwlpjtltgcxtnqjyu localhost 3324 localhost 3322 auth-enabled
+
+```

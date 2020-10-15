@@ -40,6 +40,10 @@ func main() {
 		}
 	}
 
+	var authEnabled string
+	if len(os.Args) > 7{
+		authEnabled = os.Args[7]
+	}
 
 	log.Printf("Ledger compliance vs Immudb SDK. Each loop are %d set", benchmarkWork)
 	for loop:= 0; loop < 5; loop ++ {
@@ -60,6 +64,8 @@ func main() {
 		elapsed := time.Since(start)
 		log.Printf("Elapsed %s on lc \t\tloop %d", elapsed, loop)
 
+		var token string
+		var md metadata.MD
 		//log.Printf("Immudb starting on loop %d", loop)
 		if immuHost != "" || immuPort != 0 {
 			startImmu := time.Now()
@@ -71,20 +77,25 @@ func main() {
 			if err != nil {
 				log.Fatal(err)
 			}
+			token = resp.Token
 			val, ok := os.LookupEnv("LCVSIMMU_DEBUG")
 			if ok && val == "debug" {
 				log.Println(resp)
 			}
-			md := metadata.Pairs("authorization", "Bearer "+resp.Token)
-			ctx := metadata.NewOutgoingContext(context.Background(), md)
-			respUse, err := immuclient.UseDatabase(ctx, &schema.Database{
-				Databasename: "defaultdb",
-			})
-			if err != nil {
-				log.Fatal(err)
+			if authEnabled == "" {
+				md = metadata.Pairs("authorization", "Bearer "+token)
+				ctx := metadata.NewOutgoingContext(context.Background(), md)
+				respUse, err := immuclient.UseDatabase(ctx, &schema.Database{
+					Databasename: "defaultdb",
+				})
+				if err != nil {
+					log.Fatal(err)
+				}
+				token = respUse.Token
 			}
-			md = metadata.Pairs("authorization", "Bearer "+respUse.Token)
-			ctx = metadata.NewOutgoingContext(context.Background(), md)
+
+			md = metadata.Pairs("authorization", "Bearer "+token)
+			ctx := metadata.NewOutgoingContext(context.Background(), md)
 			for i:=0; i<=benchmarkWork;i++{
 				_, err := immuclient.Set(ctx, []byte(fmt.Sprintf("%d", i)), []byte(fmt.Sprintf("%d", i)))
 				if err != nil {
