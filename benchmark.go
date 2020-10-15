@@ -76,6 +76,9 @@ func main() {
 			respUse, err := immuclient.UseDatabase(ctx, &schema.Database{
 				Databasename: "defaultdb",
 			})
+			if err != nil {
+				log.Fatal(err)
+			}
 			md = metadata.Pairs("authorization", "Bearer "+respUse.Token)
 			ctx = metadata.NewOutgoingContext(context.Background(), md)
 			for i:=0; i<=benchmarkWork;i++{
