@@ -71,6 +71,10 @@ func main() {
 			if err != nil {
 				log.Fatal(err)
 			}
+			val, ok := os.LookupEnv("LCVSIMMU_DEBUG")
+			if ok && val == "debug" {
+				log.Println(resp)
+			}
 			md := metadata.Pairs("authorization", "Bearer "+resp.Token)
 			ctx := metadata.NewOutgoingContext(context.Background(), md)
 			respUse, err := immuclient.UseDatabase(ctx, &schema.Database{

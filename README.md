@@ -11,3 +11,8 @@ to skip immudb benchmark
 ```bash
 ./benchmark 1000 athlndeyjnyfqcnvoexjwlpjtltgcxtnqjyu localhost 3324 
 ```
+
+Enable debug:
+```bash
+export LCVSIMMU_DEBUG=debug
+```
